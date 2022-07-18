@@ -3,21 +3,21 @@ import mongoose  from "mongoose";
 const RestaurantSchema = new mongoose.Schema({
     name: {
         type:String,
-        require:true,
+        required:true,
     },
     city : {
         type:String,
-        require:true,
+        required:true,
     },
     address :
         {
             type:String,
-            require:true,
+            required:true,
         },
     mapLocation :
         {
             type:String,
-            require:true,
+            required:true,
         },
     cuisine: [String],
 
@@ -31,7 +31,7 @@ const RestaurantSchema = new mongoose.Schema({
 
     averageCost: Number,
 
-    amenities: [String],
+    amenities: [String], // wifi , parking , bycycle and etc
 
     menuImage: {
           type: mongoose.Types.ObjectId,

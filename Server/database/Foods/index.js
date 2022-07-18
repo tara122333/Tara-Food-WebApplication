@@ -3,11 +3,11 @@ import mongoose  from "mongoose";
 const FoodSchema = new mongoose.Schema({
     name:{
         type:String,
-        require:true,
+        required:true,
     },
     description:{
         type:String,
-        require:true,
+        required:true,
     },
     isVeg : {
         type:Boolean,
@@ -19,7 +19,7 @@ const FoodSchema = new mongoose.Schema({
     },
     category:{
         type:String,
-        require:true,
+        required:true,
     },
     photos:{
         type:mongoose.Types.ObjectId,
@@ -29,7 +29,7 @@ const FoodSchema = new mongoose.Schema({
     {
         type:Number,
         default:150,
-        require:true,
+        required:true,
     },
     addOns:[
         {
@@ -41,7 +41,7 @@ const FoodSchema = new mongoose.Schema({
     restaurant : {
         type:mongoose.Types.ObjectId,
         ref:"Restaurants",
-        require:true,
+        required:true,
     },
 
 

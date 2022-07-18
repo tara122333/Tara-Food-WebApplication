@@ -1,29 +1,35 @@
 import mongoose from "mongoose";
 
 const ReviewSchema = new mongoose.Schema({
-    reviewText :{
-        type:String,
-        require:true,
-    },
     food:{
         type:mongoose.Types.ObjectId,
         ref:"Foods",
     },
     restaurant: {
         type: mongoose.Types.ObjectId,
-        ref: "Restaurant",
-      },
-      rating: Number,
-      photos: {
-        type: mongoose.Types.ObjectId,
-        ref: "Images",
-      },
-      rating: Number,
-      user: {
+        ref: "Restaurants",
+    },
+    rating:{
+        type:Number,
+        required:true,
+
+    },
+    user: {
         type: mongoose.Types.ObjectId,
         ref: "Users",
-      },
-},{
+    },
+    reviewText :{
+        type:String,
+        required:true,
+    },
+    photos: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "Images",
+      }
+    ],
+},
+{
   timestamps:true
 });
 

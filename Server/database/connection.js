@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
-// import dotenv from "dotenv";
 
-mongoose.connect('mongodb://localhost:27017/TaraFood',{
+mongoose.connect('mongodb://localhost:27017/TaraFoodApplication',{
     useNewUrlParser:true,
     useUnifiedTopology:true
 }).then(()=>{
