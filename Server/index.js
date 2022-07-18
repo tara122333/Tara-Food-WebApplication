@@ -25,6 +25,7 @@ googleAuthConfig(passport);
 import Auth from './API/auth';
 import Restaurant from './API/restaurants';
 import Food from './API/food';
+import Image from './API/image'
 
 const Zomato = express();
 
@@ -62,6 +63,7 @@ Zomato.use(passport.session());
 Zomato.use('/auth', Auth);
 Zomato.use('/restaurant',Restaurant);
 Zomato.use('/food',Food);
+Zomato.use('/image',Image);
 
 
 Zomato.get("/",(req,res)=>{
