@@ -9,8 +9,13 @@ import passport from 'passport'; //passport
 const session = require('express-session') // session
 
 // imports my modules
-// import googleAuthConfig from "./configs/google-passport.config"; // google AuthConfig
 
+// import configs
+import googleAuthConfig from "./config/google.config"; // google AuthConfig
+
+
+// passpoer configuration
+googleAuthConfig(passport);
 
 
 // DB
@@ -32,17 +37,18 @@ Zomato.use(session({
 
 
 // Application middleware
+Zomato.use(express.json());
 Zomato.use(express.urlencoded({ extended: false }));
 Zomato.use(helmet());
 Zomato.use(cors());
-Zomato.use(express.json());
-Zomato.use(passport.session());
 Zomato.use(passport.initialize());
+Zomato.use(passport.session());
 
 // Zomato.use(session());
 
 
-// googleAuthConfig(passport);
+
+
 // routeAuthConfig(passport);
 
 
@@ -61,7 +67,7 @@ Zomato.get("/",(req,res)=>{
 
 
 //server listening
-Zomato.listen(4000,()=>{
+Zomato.listen(3000,()=>{
     // MongoDb().then((error)=>{
     //     if(error){
     //         console.log("databases connected success but server not started " + error);

@@ -16,7 +16,7 @@ const UserSchema = new mongoose.Schema({
     },
     password : {
         type:String,
-        required:true,
+        // required:true,
     },
     address : [
         {
@@ -66,14 +66,15 @@ UserSchema.statics.findByEmail = async (email) => {
 
 
 //  find email and password in db
-UserSchema.statics.findByEmailAndPassword = async (email,password)=>{
+UserSchema.statics.findByEmailAndPassword = async ({email,password})=>{
     const user = await UserModel.findOne({email});
     if(!user) throw new Error("Email Does not exist");
-
     const isMatch = await bcrypt.compare(password,user.password);
     if(!isMatch) throw new Error("password does not match");
     return user;
 };
+
+
 
 // find user email and phoneNumber
 UserSchema.statics.findByEmailAndPhone = async ({email, phoneNumber})=>{
