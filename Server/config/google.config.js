@@ -22,9 +22,9 @@ export default(passport)=>{
                 profilePic : profile.photos[0].value,
                 phoneNumber : profile.ph
             };
-            console.log(profile.displayName);
-            console.log(profile.emails[0].value);
-            console.log(profile.photos[0].value);
+            // console.log(profile.displayName);
+            // console.log(profile.emails[0].value);
+            // console.log(profile.photos[0].value);
             try {
                 const user = await UserModel.findOne({email:newUser.email});
                 console.log(user);

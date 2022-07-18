@@ -23,6 +23,8 @@ googleAuthConfig(passport);
 
 // importing microservices route
 import Auth from './API/auth';
+import Restaurant from './API/restaurants';
+import Food from './API/food';
 
 const Zomato = express();
 
@@ -58,6 +60,8 @@ Zomato.use(passport.session());
 
 // Application Route
 Zomato.use('/auth', Auth);
+Zomato.use('/restaurant',Restaurant);
+Zomato.use('/food',Food);
 
 
 Zomato.get("/",(req,res)=>{
