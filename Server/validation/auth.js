@@ -10,10 +10,11 @@ export const ValidSignup = (userData) =>{
     });
     return Schema.validateAsync(userData);
 } 
+
 export const ValidSignin = (userData) =>{
     const Schema = Joi.object({
         email:Joi.string().email().required(),
         password:Joi.string().min(5).max(15).required(),
     });
-    return Schema.ValidSignin(userData);
+    return Schema.validateAsync(userData);
 } 

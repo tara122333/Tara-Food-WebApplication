@@ -8,7 +8,7 @@ const Router = express.Router();
 
 
 // validation config
-import {ValidSignup} from '../../validation/auth';
+import {ValidSignup,ValidSignin} from '../../validation/auth';
 
 
 
