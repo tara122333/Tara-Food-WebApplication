@@ -7,6 +7,9 @@ import passport from "passport";
 const Router = express.Router();
 
 
+// validation config
+import {ValidSignup} from '../../validation/auth';
+
 
 
 /*
@@ -16,8 +19,9 @@ Des        ==> signUp with email and password
 params     ==> none
 Access     ==> public
 */
-Router.post("/signup",async(req,res,next)=>{
+Router.post("/signup",async(req,res)=>{
     try {
+        await ValidSignup(req.body.credentials);
         await UserModel.findByEmailAndPhone(req.body.credentials);
         const newUser = await UserModel.create(req.body.credentials);
         const token  = newUser.generateAuthToken();
