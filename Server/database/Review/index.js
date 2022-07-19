@@ -18,6 +18,8 @@ const ReviewSchema = new mongoose.Schema({
         type: mongoose.Types.ObjectId,
         ref: "Users",
     },
+    isFoodReview:Boolean,
+    isRestaurantReview:Boolean,
     reviewText :{
         type:String,
         required:true,

@@ -9,7 +9,7 @@ const Router = express.Router();
 
 
 /*
-route      ==> /list
+route      ==> /list  
 method     ==> GET
 Des        ==> Get all the menu based on the id 
 params     ==> _id
