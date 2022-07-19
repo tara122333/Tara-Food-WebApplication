@@ -28,6 +28,7 @@ import Food from './API/food';
 import Image from './API/image'
 import Order from './API/order';
 import Reviews from './API/review';
+import User from './API/user';
 
 const Zomato = express();
 
@@ -68,6 +69,7 @@ Zomato.use('/food',Food);
 Zomato.use('/image',Image);
 Zomato.use('/order',Order);
 Zomato.use('/reviews',Reviews);
+Zomato.use('/user',User);
 
 
 Zomato.get("/",(req,res)=>{
