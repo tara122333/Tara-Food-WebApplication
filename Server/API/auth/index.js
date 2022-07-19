@@ -43,8 +43,9 @@ Des        ==> signUp with email and password
 params     ==> none
 Access     ==> public
 */
-Router.post("/signin",async(req,res,next)=>{
+Router.post("/signin",async(req,res)=>{
     try {
+        await ValidSignin(req.body.credentials);
         const user = await UserModel.findByEmailAndPassword(req.body.credentials);
         const token =  user.generateAuthToken();
         return res.json({
