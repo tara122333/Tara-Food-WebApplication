@@ -12,10 +12,9 @@ const session = require('express-session') // session
 
 // import configs
 import googleAuthConfig from "./config/google.config"; // google AuthConfig
+import routeConfig from './config/route.config';
 
 
-// passpoer configuration
-googleAuthConfig(passport);
 
 
 // DB
@@ -50,14 +49,11 @@ Zomato.use(cors());
 Zomato.use(passport.initialize());
 Zomato.use(passport.session());
 
-// Zomato.use(session());
 
 
-
-
-// routeAuthConfig(passport);
-
-
+// passpoer configuration
+googleAuthConfig(passport);
+routeConfig(passport);
 
 
 

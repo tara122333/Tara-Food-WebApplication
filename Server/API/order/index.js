@@ -1,6 +1,6 @@
 // Library
 import  express from "express";
-// import passport from "passport";
+import passport from "passport";
 
 // database model
 import { OrderModel } from "../../database/allModels";
@@ -15,7 +15,9 @@ Des        ==> Get all the orders based on the id
 params     ==> _id
 Access     ==> public
 */
-Router.get("/:_id", async(req,res)=>{
+Router.get("/:_id",
+        passport.authenticate("jwt",{session:false}) // private router
+         ,async(req,res)=>{
     try {
         const {_id} = req.params;
         const getOrder = await OrderModel.findOne({_id});
