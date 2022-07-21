@@ -19,7 +19,6 @@ Des        ==> Get all the foods based on the perticular restaurants
 params     ==> _id
 Access     ==> public
 */
-
 Router.get("/r/:_id", async(req,res)=>{
     try {
         await ValidateRestaurantId(req.params);
@@ -40,7 +39,6 @@ Des        ==> Get all the foods based on the perticular category
 params     ==> category
 Access     ==> public
 */
-
 Router.get("/r/:category", async(req,res)=>{
     try {
         await Validatecategory(req.params);

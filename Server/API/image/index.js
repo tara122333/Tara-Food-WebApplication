@@ -17,6 +17,10 @@ const storage = multer.memoryStorage();
 const upload = multer({storage});
 
 
+
+
+
+
 /*
 route      ==> /
 method     ==> POST
@@ -24,7 +28,6 @@ Des        ==> upload given image to s3 bucket, and saves file link to mongodb
 params     ==> none
 Access     ==> public
 */
-
 Router.post("/", upload.single("file"), async(req,res)=>{
     try {
         const file = req.file;
@@ -35,7 +38,6 @@ Router.post("/", upload.single("file"), async(req,res)=>{
             ContentType:file.mimetype,
             // ACL : "public-read",
         };
-        
         const uploadImage = await s3Upload(bucketOptions);
         return res.status(200).json({uploadImage});
 

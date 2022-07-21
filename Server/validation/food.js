@@ -11,4 +11,4 @@ export const Validatecategory = (category) =>{
         _id:Joi.string().required(),
     });
     return Schema.validateAsync(category);
-} 
+}
