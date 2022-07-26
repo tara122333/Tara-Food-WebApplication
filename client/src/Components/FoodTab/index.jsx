@@ -105,8 +105,8 @@ const LargeTabs = () =>{
                 {
                     allTypes.map((items)=>(
                         <Link to={`/${items.id}`}>
-                            <div className="flex items-center pb-4 gap-3 transition duration-700 ease-in-out">
-                                <div className={classname("w-16 h-16 p-4 rounded-full bg-gray-100",{[`bg-${items.activeColor}-100`] : type===items.id})}>
+                            <div className={classnames("flex items-center gap-3 pb-2 transition duration-700 ease-in-out",{"border-b-2 border-zomato-400": type === items.id,})}>
+                                <div className={classnames("w-16 h-16 bg-gray-100 p-4 rounded-full",{ [`bg-${items.activeColor}-100`] : type ===items.id})}>
                                     <img src={type===items.id ? items.imageActive : items.imageDefault} alt="delivery" className="w-full h-full"/>
                                 </div>
                                 <h3 className={type===items.id ? "text-xl text-red-400" : "text-xl text-gray-700"}>

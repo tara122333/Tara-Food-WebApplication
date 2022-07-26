@@ -7,7 +7,7 @@ import {RiArrowDownSFill} from 'react-icons/ri';
 const NavbarLg = () =>{
     return (
         <>
-            <div className="flex justify-evenly gap-4 items-center w-full">
+            <div className="flex justify-between gap-4 items-center w-full">
                 <div className="w-40 py-2 cursor-pointer">
                     <img src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png?fit=around|198:42&crop=198:42;*,*" alt="logo"  className="w-full h-full"/>
                 </div>
