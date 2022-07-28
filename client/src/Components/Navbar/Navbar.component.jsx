@@ -12,14 +12,14 @@ const NavbarLg = () =>{
                     <img src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png?fit=around|198:42&crop=198:42;*,*" alt="logo"  className="w-full h-full"/>
                 </div>
                 <div className="flex items-center border shadow-md rounded-md px-3 py-1 w-2/4 gap-3 border-gray-200">
-                    <div className="flex items-center gap-3 border-r-2">
+                    <div className="flex items-center gap-3 border-r-2 border-r-gray-400">
                         <GrLocation className="text-red-500 text-xl"/>
                         <div className="">
                             <input type="search" name="location_search" id="location_search" placeholder="Jaipur" className="outline-none text-gray-700" />
                         </div>
                         <RiArrowDownSFill className="text-2xl text-gray-700"/>
                     </div>
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 w-full">
                         <BiSearch className="text-2xl text-gray-500 "/>
                         <div className="w-full">
                             <input type="search" name="food_search" id="food_search" placeholder="Search for restaurants and your dish" className="outline-none w-full py-2"/>

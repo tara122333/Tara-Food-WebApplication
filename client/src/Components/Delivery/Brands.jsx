@@ -95,7 +95,7 @@ const DeliveryBrands = () =>{
     return(
         <>
             <div>
-                <h1 className="font-normal text-2xl px-3 lg:container lg:mx-auto lg:w-full lg:px-24 lg:my-4 lg:text-3xl lg:font-medium">Top brands for you</h1>
+                <h1 className="font-normal text-xl px-3 lg:container lg:mx-auto lg:w-full lg:px-24 lg:my-4 lg:text-3xl lg:font-medium">Top brands for you</h1>
                 <div className="px-4 lg:block lg:container lg:mx-auto w-full lg:px-24">
                     <Slider {...settings}>
                     {
@@ -104,7 +104,7 @@ const DeliveryBrands = () =>{
                                 <div className="lg:flex w-full justify-center items-center h-full">
                                     <div className="w-20 h-40 lg:w-40 lg:h-60 flex flex-col gap-2 lg:gap-4">
                                         <div className="w-full h-20 lg:h-40 rounded-full p-1 bg-white shadow-lg">
-                                            <img src={items.image} alt="food" className="w-full h-full object-cover rounded-full" />
+                                            <img src={items.image} alt="food" className="w-full h-full rounded-full"/>
                                         </div>
                                         <h3 className="text-center text-base my-1 font-light lg:font-medium lg:text-gray-600 lg:text-xl">{items.title}</h3>
                                     </div>

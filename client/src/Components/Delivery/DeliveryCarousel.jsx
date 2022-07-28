@@ -12,7 +12,7 @@ const DeliveryCarousel = () =>{
             title : "Pizza",
         },
         {
-            image : "https://b.zmtcdn.com/data/dish_images/197987b7ebcd1ee08f8c25ea4e77e20f1634731334.png",
+            image : "https://b.zmtcdn.com/data/dish_images/ccb7dc2ba2b054419f805da7f05704471634886169.png",
             title : "Burger",
         },
         {
@@ -71,7 +71,7 @@ const DeliveryCarousel = () =>{
     return(
         <>
             <div>
-                <h1 className="font-normal text-2xl px-3 lg:container lg:mx-auto lg:w-full lg:px-24 lg:my-4 lg:text-3xl lg:font-medium">Inspiration for your first order</h1>
+                <h1 className="font-normal text-xl px-3 lg:container lg:mx-auto lg:w-full lg:px-24 lg:my-4 lg:text-3xl lg:font-medium">Inspiration for your first order</h1>
                 <div className="lg:hidden flex flex-wrap items-center justify-start w-full py-3">
                     {
                         categories.map((items)=>(
