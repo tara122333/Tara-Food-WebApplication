@@ -2,15 +2,15 @@ import React from "react";
 
 
 
-const DeliveryCategorySm = () =>{
+const DeliveryCategorySm = ({image,title}) =>{
     return(
         <>
             <div className="lg:hidden w-1/4 flex flex-col gap-3">
                 <div className="h-24 w-24 my-4">
-                    <div className="w h-full bg-white rounded-full p-2">
-                        <img src="https://b.zmtcdn.com/data/o2_assets/d0bd7c9405ac87f6aa65e31fe55800941632716575.png" alt="Pizza" className="w-full h-full rounded-full object-cover" />
+                    <div className="w h-full bg-white rounded-full p-1">
+                        <img src={image} alt="Pizza" className="w-full h-full rounded-full object-cover" />
                     </div>
-                    <h3 className="text-center text-base my-1 font-light">Pizza</h3>
+                    <h3 className="text-center text-base my-1 font-light">{title}</h3>
                 </div>
                 
             </div>
@@ -18,29 +18,26 @@ const DeliveryCategorySm = () =>{
     );
 }
 
-const DeliveryCategoryLg = () =>{
-
-    
-
+const DeliveryCategoryLg = ({image,title}) =>{
     return(
         <>
-            <div className="hidden lg:flex">
+            <div className="hidden lg:flex w-full justify-center items-center">
                 <div className="w-40 flex flex-col gap-3">
-                    <div className="w-full h-full rounded-full p-2">
-                        <img src="https://b.zmtcdn.com/data/dish_images/ccb7dc2ba2b054419f805da7f05704471634886169.png" alt="food" className="w-full h-full rounded-full" />
+                    <div className="w-full h-full rounded-full p-2 bg-white">
+                        <img src={image} alt="food" className="w-full h-full rounded-full" />
                     </div>
-                    <h3 className="text-center font-medium text-xl">Burger</h3>
+                    <h3 className="text-center font-medium text-xl text-gray-600">{title}</h3>
                 </div>
             </div>
         </>
     );
 }
 
-const DeliveryCategory = () =>{
+const DeliveryCategory = (props) =>{
     return(
         <>
-            <DeliveryCategorySm />
-            <DeliveryCategoryLg />
+            <DeliveryCategorySm {...props} />
+            <DeliveryCategoryLg {...props}/>
         </>
     );
 }
