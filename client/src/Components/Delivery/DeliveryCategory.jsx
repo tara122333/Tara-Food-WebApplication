@@ -21,8 +21,8 @@ const DeliveryCategorySm = ({image,title}) =>{
 const DeliveryCategoryLg = ({image,title}) =>{
     return(
         <>
-            <div className="hidden lg:flex w-full justify-center items-center">
-                <div className="w-40 flex flex-col gap-3">
+            <div className="hidden lg:flex w-full justify-center items-center h-full py-6">
+                <div className="w-40 h-40 flex flex-col">
                     <div className="w-full h-full rounded-full p-2 bg-white">
                         <img src={image} alt="food" className="w-full h-full rounded-full" />
                     </div>
