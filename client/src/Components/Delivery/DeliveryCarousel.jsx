@@ -72,7 +72,7 @@ const DeliveryCarousel = () =>{
         <>
             <div>
                 <h1 className="font-normal text-2xl px-3 lg:container lg:mx-auto lg:w-full lg:px-24 lg:my-4 lg:text-3xl lg:font-medium">Inspiration for your first order</h1>
-                <div className="lg:hidden flex flex-wrap items-center justify-start w-full">
+                <div className="lg:hidden flex flex-wrap items-center justify-start w-full py-3">
                     {
                         categories.map((items)=>(
                             <DeliveryCategory {...items}/>
