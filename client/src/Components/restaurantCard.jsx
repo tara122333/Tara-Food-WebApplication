@@ -3,7 +3,8 @@ import {FiStar} from 'react-icons/fi';
 const RestaurantCard = (props) =>{
     return(
         <>
-            <div className="bg-white hover:shadow-lg p-4 mb-4 w-full rounded-2xl transition duration-700 ease-in-out md:w-1/2 lg:w-1/3">
+            <div className="w-full md:w-1/2 lg:w-1/3 md:p-4">
+            <div className="bg-white hover:shadow-lg p-4 mb-4 w-full border border-white rounded-2xl transition duration-700 ease-in-out  hover:border hover:border-gray-200">
                 <div className="w-full h-56 lg:h-64 relative">
                     <div className="flex justify-between items-end absolute w-full bottom-3">
                         <div className="flex flex-col gap-2 items-star">
@@ -37,6 +38,7 @@ const RestaurantCard = (props) =>{
                         <p>₹ {props.averageCost} for one</p>
                     </div>
                 </div>
+            </div>
             </div>
         </>
     );
