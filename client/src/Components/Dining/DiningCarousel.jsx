@@ -44,7 +44,7 @@ const DiningCarousel = () =>{
 
     return(
         <>
-            <div className=" flex flex-col gap-2 md:gap-4 lg:gap-5">
+            <div className=" flex flex-col gap-2 md:gap-4 lg:gap-5 w-full">
                 <h1 className="font-medium text-xl px-3 lg:text-3xl">Collections</h1>
                 <div className="w-full">
                     <Slider {...settings}>

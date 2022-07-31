@@ -34,7 +34,7 @@ const MobileTabs = () =>{
         const {type} = useParams();
     return(
         <>
-            <div className="fixed bottom-0 p-3 bg-white shadow-lg flex w-full justify-around md:justify-evenly items-center lg:hidden gap-2 z-10">
+            <div className="fixed bottom-0 left-0 w-full p-3 bg-white shadow-lg flex w-full justify-around md:justify-evenly items-center lg:hidden gap-2 z-10">
                 
                 {
                     allTypes.map((items)=>(

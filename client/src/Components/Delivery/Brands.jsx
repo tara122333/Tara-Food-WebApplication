@@ -96,7 +96,7 @@ const DeliveryBrands = () =>{
         <>
             <div>
                 <h1 className="font-normal text-xl px-3 lg:container lg:mx-auto lg:w-full lg:px-24 lg:my-4 lg:text-3xl lg:font-medium">Top brands for you</h1>
-                <div className="px-4 lg:block lg:container lg:mx-auto w-full lg:px-24">
+                <div className="px-4 lg:block lg:container lg:mx-auto w-full lg:px-24 my-3">
                     <Slider {...settings}>
                     {
                         brands.map((items)=>(
