@@ -12,6 +12,11 @@ function App() {
       <HomeHOC exact path="/:type" element={Master}/>
 
       <RestaurantHOC path="/restaurant/:id" exact element={Temp}/>
+      <RestaurantHOC path="/restaurant/:id/overview" exact element={Temp}/>
+      <RestaurantHOC path="/restaurant/:id/order-online" exact element={Temp}/>
+      <RestaurantHOC path="/restaurant/:id/reviews" exact element={Temp}/>
+      <RestaurantHOC path="/restaurant/:id/menu" exact element={Temp}/>
+      <RestaurantHOC path="/restaurant/:id/photos" exact element={Temp}/>
   </>
   ); 
 }

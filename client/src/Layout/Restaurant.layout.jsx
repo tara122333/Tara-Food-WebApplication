@@ -6,6 +6,7 @@ import InfoButtons from "../Components/restaurant/InfoButtons";
 import { TiStar } from "react-icons/ti";
 import { RiDirectionLine, RiShareForwardLine } from "react-icons/ri";
 import { BiBookmarkPlus } from "react-icons/bi";
+import TabContainer from "../Components/restaurant/Tabs";
 
 const RestaurantLayout = (props) =>{
     return(
@@ -45,6 +46,9 @@ const RestaurantLayout = (props) =>{
                     <InfoButtons>
                         <RiShareForwardLine /> Share
                     </InfoButtons>
+                </div>
+                <div className="my-10">
+                    <TabContainer></TabContainer>
                 </div>
 
             </div>
