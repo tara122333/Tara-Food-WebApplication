@@ -56,8 +56,6 @@ googleAuthConfig(passport);
 routeConfig(passport);
 
 
-
-
 // Application Route
 Zomato.use('/auth', Auth);
 Zomato.use('/restaurant',Restaurant);

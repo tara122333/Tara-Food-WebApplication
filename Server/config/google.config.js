@@ -20,7 +20,7 @@ export default(passport)=>{
                 fullname:profile.displayName,
                 email:profile.emails[0].value,
                 profilePic : profile.photos[0].value,
-                phoneNumber : profile.ph
+                // phoneNumber : profile.ph
             };
             // console.log(profile.displayName);
             // console.log(profile.emails[0].value);

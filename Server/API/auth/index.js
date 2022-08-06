@@ -26,7 +26,7 @@ Router.post("/signup",async(req,res)=>{
         const newUser = await UserModel.create(req.body.credentials);
         const token  = newUser.generateAuthToken();
         return res.status(200).json({
-            token,essage : "user added successfully",status:"success"
+            token,message : "user added successfully",status:"success"
         });
     } catch (error) {
         return res.status(500).json({ error: error.message });
