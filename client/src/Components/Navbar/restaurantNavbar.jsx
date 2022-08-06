@@ -3,13 +3,15 @@ import {FaRegUser} from 'react-icons/fa';
 import {GrLocation} from 'react-icons/gr';
 import {BiSearch} from 'react-icons/bi';
 import {RiArrowDownSFill} from 'react-icons/ri';
+import {HiArrowLeft} from 'react-icons/hi'
+
 
 const NavbarLg = () =>{
     return (
         <>
             <div className="flex justify-between gap-4 items-center w-full">
                 <div className="w-40 py-2 cursor-pointer">
-                    <img src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png?fit=around|198:42&crop=198:42;*,*" alt="logo"  className="w-full h-full"/>
+                    <img src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png" alt="logo"  className="w-full h-full"/>
                 </div>
                 <div className="flex items-center border shadow-md rounded-md px-3 py-1 w-2/4 gap-3 border-gray-200">
                     <div className="flex items-center gap-3 border-r-2 border-r-gray-400">
@@ -39,8 +41,11 @@ const NavbarSm = () =>{
     return (
         <>
             <div className="flex justify-between items-center gap-3 px-2">
+                <div className="flex justify-center items-center gap-3">
+                <HiArrowLeft className="text-2xl"/>
                 <div className="h-10 w-28 p-2">
-                    <img src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png?fit=around|198:42&crop=198:42;*,*" alt="logo"  className="w-full h-full"/>
+                    <img src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png" alt="logo"  className="w-full h-full"/>
+                </div>
                 </div>
                 <div className="flex justify-center items-center gap-3">
                     <div className="bg-red-500 rounded-full px-3 py-2">
@@ -55,7 +60,7 @@ const NavbarSm = () =>{
     );
 }
 
-const Navbar = () =>{
+const RestaurantNavbar = () =>{
     return(
         <>
             <div className="lg:hidden shadow-md py-1 bg-white">
@@ -68,4 +73,4 @@ const Navbar = () =>{
     );
 }
 
-export default Navbar;
+export default RestaurantNavbar;
