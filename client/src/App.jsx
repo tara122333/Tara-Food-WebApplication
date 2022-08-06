@@ -8,17 +8,12 @@ function App() {
   return (
   <>
     <HomeHOC path="/" exact element={Temp}/>
-    {/* <Routes>
-    <Route to="/">
-      <Navigate to="/delivery"/>
-    </Route>
-    </Routes> */}
 
       <HomeHOC exact path="/:type" element={Master}/>
 
-      <RestaurantHOC path="/restaurant:id" exact element={Temp}/>
+      <RestaurantHOC path="/restaurant/:id" exact element={Temp}/>
   </>
-  );
+  ); 
 }
 
 export default App;
