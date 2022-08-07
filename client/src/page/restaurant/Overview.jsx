@@ -2,10 +2,12 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { IoMdArrowDropright } from "react-icons/io";
 import Slider from "react-slick";
+import ReactStars from "react-rating-stars-component";
 
 // components
 import MenuCollection from "../../Components/restaurant/MenuCollection";
 import MenuSimilarRestaurantcard from "../../Components/restaurant/MenuSimilarRestaurantcard";
+import ReviewCard from "../../Components/restaurant/Reviews/reviewCard";
 
 const Overview = () => {
 
@@ -46,9 +48,13 @@ const Overview = () => {
     ],
   };
 
+
+  const ratingChanged = (newRating) => {
+    console.log(newRating);
+  };
   return (
     <>
-      <div className="flex flex-col md:flex-row relative">
+      <div className="flex flex-col md:flex-row relative gap-4">
         <div className="w-full md:w-8/12">
           <h2 className="font-semibold text-lg md:text-xl my-4">
             About this place
@@ -123,6 +129,21 @@ const Overview = () => {
                 />
               </Slider>
             </div>
+          </div>
+          <div className="my-4">
+            <h4 className="text-lg font-medium">
+              Rate your delivery experience
+            </h4>
+            <ReactStars
+              count={5}
+              onChange={ratingChanged}
+              size={24}
+              activeColor="#ffd700"
+            />
+              <ReviewCard />
+              <ReviewCard />
+              <ReviewCard />
+              <ReviewCard />
           </div>
         </div>
         <aside
