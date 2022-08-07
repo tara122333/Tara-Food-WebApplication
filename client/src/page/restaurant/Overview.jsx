@@ -3,12 +3,13 @@ import { Link, useParams } from "react-router-dom";
 import { IoMdArrowDropright } from "react-icons/io";
 import Slider from "react-slick";
 import ReactStars from "react-rating-stars-component";
-import { MapContainer, TileLayer, useMap } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 // components
 import MenuCollection from "../../Components/restaurant/MenuCollection";
 import MenuSimilarRestaurantcard from "../../Components/restaurant/MenuSimilarRestaurantcard";
 import ReviewCard from "../../Components/restaurant/Reviews/reviewCard";
+import Mapview from "../../Components/restaurant/MapView";
 
 const Overview = () => {
 
@@ -146,24 +147,25 @@ const Overview = () => {
               <ReviewCard />
               <ReviewCard />
           </div>
+          <div className="my-4 w-full  md:hidden flex flex-col gap-4">
+            <Mapview
+              title="Sodhani Sweets Pvt. Ltd."
+              phno={`+919694088136`}
+              mapLocation={[26.94347920947382, 75.71841272310175]}
+              address="Opposite Nagar Nigam, Bapu Nagar, Jaipur"
+            />
+          </div>
         </div>
         <aside
           style={{ height: "fit-content" }}
           className="hidden md:flex md:w-4/12 sticky rounded-xl top-2 bg-white p-3 shadow-md flex-col gap-4"
         >
-          <div>
-          <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            <Marker position={[51.505, -0.09]}>
-              <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
-              </Popup>
-            </Marker>
-          </MapContainer>
-          </div>
+          <Mapview
+            title="Sodhani Sweets Pvt. Ltd."
+            phno={`+919694088136`}
+            mapLocation={[26.94347920947382, 75.71841272310175]}
+            address="Opposite Nagar Nigam, Bapu Nagar, Jaipur"
+          />
         </aside>
       </div>
     </>

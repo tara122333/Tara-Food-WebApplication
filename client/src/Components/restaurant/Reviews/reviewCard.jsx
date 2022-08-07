@@ -9,7 +9,7 @@ const ReviewCard = (props) => {
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-full">
               <img
-                src="https://b.zmtcdn.com/data/user_profile_pictures/d76/cc84183f68cc34027812bdf62585cd76.jpg?fit=around%7C100%3A100&crop=100%3A100%3B%2A%2C%2A"
+                src="https://media-exp1.licdn.com/dms/image/C4D03AQFLhXZMotSC3A/profile-displayphoto-shrink_800_800/0/1656750765178?e=1665619200&v=beta&t=W-Ny0kbOuIE3EmFDMXUkYOA8m5-mWhknAW-36r6TaBs"
                 alt="avatar"
                 className="w-full h-full rounded-full object-cover"
               />
