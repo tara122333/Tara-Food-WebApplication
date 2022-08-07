@@ -3,7 +3,6 @@ import { Link, useParams } from "react-router-dom";
 import { IoMdArrowDropright } from "react-icons/io";
 import Slider from "react-slick";
 import ReactStars from "react-rating-stars-component";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 // components
 import MenuCollection from "../../Components/restaurant/MenuCollection";

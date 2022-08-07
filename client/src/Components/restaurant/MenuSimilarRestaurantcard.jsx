@@ -18,7 +18,7 @@ const MenuSimilarRestaurantcard = (props) => {
             <div className="flex items-center justify-between text-sm">
               <span className="flex items-center gap-1">
                 <span className="flex items-center gap-1 bg-green-700 text-white px-2 py-1 rounded">
-                  30
+                  4.2
                   <TiStar />
                 </span>
                 Dining
@@ -26,7 +26,7 @@ const MenuSimilarRestaurantcard = (props) => {
               <span className=" w-2 h-6 border-r border-gray-500" />
               <span className="flex items-center gap-1">
                 <span className="flex items-center gap-1 bg-green-700 text-white p-1 rounded">
-                  30
+                  3.9
                   <TiStar />
                 </span>
                 Dining
