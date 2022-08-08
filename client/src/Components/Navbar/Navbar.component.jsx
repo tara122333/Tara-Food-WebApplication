@@ -1,10 +1,15 @@
-import React from "react";
+import React,{useState} from "react";
 import {FaRegUser} from 'react-icons/fa';
 import {GrLocation} from 'react-icons/gr';
 import {BiSearch} from 'react-icons/bi';
 import {RiArrowDownSFill} from 'react-icons/ri';
 
-const NavbarLg = () =>{
+
+// Component
+import SignIn from "../Auth/SignIn";
+import SignUp from "../Auth/SignUp";
+
+const NavbarLg = ({SignIn,SignUp}) =>{
     return (
         <>
             <div className="flex justify-between gap-4 items-center w-full">
@@ -27,28 +32,38 @@ const NavbarLg = () =>{
                     </div>
                 </div>
                 <div className="flex justify-center items-center gap-5">
-                    <button className="text-gray-600 hover:text-black text-xl">Log in</button>
-                    <button className="text-gray-600 hover:text-black text-xl">Sign up</button>
+                    <button className="text-gray-600 hover:text-black text-xl" onClick={SignIn}>Log in</button>
+                    <button className="text-gray-600 hover:text-black text-xl" onClick={SignUp}>Sign up</button>
                 </div>
             </div>
         </>
     );
 }
 
-const NavbarSm = () =>{
+
+const NavbarSm = ({SignIn,SignUp}) =>{
+    const [isDropDownOpen, setIsDropDownOpen] = useState(false);
     return (
         <>
             <div className="flex justify-between items-center gap-3 px-2">
                 <div className="h-10 w-28 p-2">
                     <img src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png" alt="logo"  className="w-full h-full"/>
                 </div>
-                <div className="flex justify-center items-center gap-3">
+                <div className="flex justify-center items-center gap-3 relative">
                     <div className="bg-red-500 rounded-full px-3 py-2">
                         <button className="text-white">Use App</button>
                     </div>
-                    <div className="border rounded-full p-3">
+                    <div className="border rounded-full p-3" onClick={()=>setIsDropDownOpen((prev)=> !prev)}>
                         <FaRegUser className="text-red-500 font-bold"/>
                     </div>
+                    {
+                        isDropDownOpen && (
+                            <div className="absolute shadow-lg py-3 -bottom-20 -right-4 w-full bg-white z-20 flex flex-col gap-2">
+                                <button onClick={SignIn}>Sign In</button>
+                                <button onClick={SignUp}>Sign Up</button>
+                            </div>
+                        )
+                    }
                 </div>
             </div>
         </>
@@ -56,13 +71,21 @@ const NavbarSm = () =>{
 }
 
 const Navbar = () =>{
+
+    const [openSignin, setOpenSignin] = useState(false);
+    const [openSignup, setOpenSignup] = useState(false);
+
+    const openSignInmodal = () => setOpenSignin(true);
+    const openSignUpmodal = () => setOpenSignup(true);
     return(
         <>
+            <SignIn isOpen={openSignin} setIsOpen={setOpenSignin}/>
+            <SignUp isOpen={openSignup} setIsOpen={setOpenSignup}/>
             <div className="lg:hidden shadow-md py-1 bg-white">
-                <NavbarSm />
+                <NavbarSm SignIn={openSignInmodal} SignUp={openSignUpmodal}/>
             </div>
             <div className="hidden lg:flex py-2 container mx-auto w-full px-24">
-                <NavbarLg />
+                <NavbarLg SignIn={openSignInmodal} SignUp={openSignUpmodal}/>
             </div>
         </>
     );
