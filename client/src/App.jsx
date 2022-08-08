@@ -7,6 +7,7 @@ import Overview from "./page/restaurant/Overview";
 import OrderOnline from "./page/restaurant/OrderOnline";
 import Reviews from "./page/restaurant/Review"
 import Menu from "./page/restaurant/Menu";
+import Photos from "./page/restaurant/Photos";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
       <RestaurantHOC path="/restaurant/:id/order-online" exact element={OrderOnline}/>
       <RestaurantHOC path="/restaurant/:id/reviews" exact element={Reviews}/>
       <RestaurantHOC path="/restaurant/:id/menu" exact element={Menu}/>
-      <RestaurantHOC path="/restaurant/:id/photos" exact element={Temp}/>
+      <RestaurantHOC path="/restaurant/:id/photos" exact element={Photos}/>
   </>
   ); 
 }
