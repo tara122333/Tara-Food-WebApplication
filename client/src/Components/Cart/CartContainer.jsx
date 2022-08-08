@@ -1,5 +1,9 @@
 import React, { useState} from "react";
-import {IoMdArrowDropdown,IoMdArrowDropright,IoMdArrowDropup,} from "react-icons/io";
+import {IoMdArrowDropright,IoMdArrowDropup,} from "react-icons/io";
+import {IoCloseSharp} from 'react-icons/io5';
+
+// components
+import FoodItem from "./FoodItem";
 
 const CartSM = ({ toggle }) => {
   
@@ -57,9 +61,29 @@ const CartLg = ({ toggle }) => {
 const CartContainer = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleCart = () => setIsOpen((prev) => !prev);
+  const closeCart = () => setIsOpen(false);
 
   return (
     <>
+
+            {isOpen && (
+                <div className="fixed w-full overflow-y-scroll h-72 bg-white  z-10 p-2 bottom-14  px-3">
+                    <div className="flex items-center justify-between md:px-20">
+                        <h3 className="text-xl font-semibold">Your Orders</h3>
+                        <IoCloseSharp onClick={closeCart} />
+                    </div>
+                    <hr className="my-2" />
+
+                    <div className="flex flex-col gap-2 md:px-20">
+                        <FoodItem name="Pizza" price="79" quantity="5"/>
+                        <FoodItem name="Pizza" price="79" quantity="5"/>
+                        <FoodItem name="Pizza" price="79" quantity="5"/>
+                        <FoodItem name="Pizza" price="79" quantity="5"/>
+                        <FoodItem name="Pizza" price="79" quantity="5"/>
+                    </div>
+                </div>
+          )}
+
           <div className="fixed w-full bg-white z-10 p-2 px-3 bottom-0">
             <CartSM toggle={toggleCart} />
             <CartLg toggle={toggleCart} />
