@@ -4,7 +4,6 @@ import { BiTimeFive } from "react-icons/bi";
 
 // components
 import FloatMenuBtn from "../../Components/restaurant/Order-Online/FloatMenuBtn";
-import FoodItem from "../../Components/restaurant/Order-Online/FoodItem";
 import MenuListContainer from "../../Components/restaurant/Order-Online/MenuListContainer";
 import FoodList from "../../Components/restaurant/Order-Online/FoodList";
 
