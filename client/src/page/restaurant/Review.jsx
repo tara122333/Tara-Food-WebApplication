@@ -8,7 +8,7 @@ const Reviews = () => {
   const [reviews, setReviews] = useState(["","",""]);
   return (
     <>
-      <div className="w-full flex flex-col md:flex-row relative">
+      <div className="w-full flex flex-col md:flex-row relative gap-3 md:gap-5">
         <div className="w-full md:w-8/12 flex flex-col gap-3">
           <div className="md:hidden">
             <AddReviewCard />
