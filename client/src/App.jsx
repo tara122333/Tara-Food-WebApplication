@@ -5,7 +5,8 @@ import Master from "./Components/master";
 import RestaurantHOC from "./HOC/Restaurant.HOC";
 import Overview from "./page/restaurant/Overview";
 import OrderOnline from "./page/restaurant/OrderOnline";
-import Reviews from "./page/restaurant/Review";
+import Reviews from "./page/restaurant/Review"
+import Menu from "./page/restaurant/Menu";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
       <RestaurantHOC path="/restaurant/:id/overview" exact element={Overview}/>
       <RestaurantHOC path="/restaurant/:id/order-online" exact element={OrderOnline}/>
       <RestaurantHOC path="/restaurant/:id/reviews" exact element={Reviews}/>
-      <RestaurantHOC path="/restaurant/:id/menu" exact element={Temp}/>
+      <RestaurantHOC path="/restaurant/:id/menu" exact element={Menu}/>
       <RestaurantHOC path="/restaurant/:id/photos" exact element={Temp}/>
   </>
   ); 
