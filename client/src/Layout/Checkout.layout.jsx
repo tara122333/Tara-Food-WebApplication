@@ -7,9 +7,12 @@ const CheckoutLayout = (props) =>{
     return(
         <>
             <Navbar />
-            {
-                props.children
-            }
+            <div className="container mx-auto px-4 lg:px-24 ">
+                {
+                    props.children
+                }
+            </div>
+
         </>
     );
 }
