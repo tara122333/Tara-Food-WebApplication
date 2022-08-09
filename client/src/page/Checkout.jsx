@@ -64,7 +64,7 @@ const Checkout = () => {
           </div>
         </div>
         <button
-          className="flex items-center gap-2 justify-center my-4 md:my-8 w-full px-4 md:w-4/5 h-14 text-white font-medium text-lg bg-red-500 rounded-lg"
+          className="flex items-center gap-2 justify-center my-4 md:my-8 w-full px-4 md:w-4/5 h-10 text-white font-medium text-lg bg-red-500 rounded-lg"
         >
           Pay Securely <BsShieldLockFill />
         </button>

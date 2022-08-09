@@ -28,6 +28,7 @@ import Image from './API/image'
 import Order from './API/order';
 import Reviews from './API/review';
 import User from './API/user';
+import MailService from "./API/Mail";
 
 const Zomato = express();
 
@@ -64,6 +65,7 @@ Zomato.use('/image',Image);
 Zomato.use('/order',Order);
 Zomato.use('/reviews',Reviews);
 Zomato.use('/user',User);
+Zomato.use('/mail',MailService);
 
 
 Zomato.get("/",(req,res)=>{
