@@ -1,4 +1,5 @@
 import React from "react";
+
 import Temp from "./Components/temp";
 import HomeHOC from "./HOC/Home.HOC";
 import Master from "./Components/master";
