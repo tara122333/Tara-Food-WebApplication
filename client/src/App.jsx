@@ -2,7 +2,7 @@ import React from "react";
 
 import Temp from "./Components/temp";
 import HomeHOC from "./HOC/Home.HOC";
-import Master from "./Components/master";
+import Home from "./page/Home";
 import RestaurantHOC from "./HOC/Restaurant.HOC";
 import Overview from "./page/restaurant/Overview";
 import OrderOnline from "./page/restaurant/OrderOnline";
@@ -17,9 +17,9 @@ function App() {
   <>
     <HomeHOC path="/" exact element={Temp}/>
 
-      <HomeHOC exact path="/:type" element={Master}/>
+      <HomeHOC exact path="/:type" element={Home}/>
 
-      <RestaurantHOC path="/restaurant/:id" exact element={Temp}/>
+      <RestaurantHOC path="/restaurant/:id" exact element={Home}/>
       <RestaurantHOC path="/restaurant/:id/overview" exact element={Overview}/>
       <RestaurantHOC path="/restaurant/:id/order-online" exact element={OrderOnline}/>
       <RestaurantHOC path="/restaurant/:id/reviews" exact element={Reviews}/>
