@@ -14,6 +14,7 @@ import Menu from "./page/restaurant/Menu";
 import Photos from "./page/restaurant/Photos";
 import CheckoutHOC from "./HOC/Checkout.HOC";
 import Checkout from "./page/Checkout";
+import GoogleAuth from "./page/GoogleAuth";
 
 
 if (localStorage.zomatoUser) {
@@ -28,6 +29,9 @@ function App() {
     <HomeHOC path="/" exact element={Temp}/>
 
       <HomeHOC exact path="/:type" element={Home}/>
+
+
+      <HomeHOC path="/google/:token" exact component={GoogleAuth} />
 
       <RestaurantHOC path="/restaurant/:id" exact element={Home}/>
       <RestaurantHOC path="/restaurant/:id/overview" exact element={Overview}/>
