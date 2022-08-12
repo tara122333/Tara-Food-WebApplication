@@ -9,6 +9,7 @@ import { ImageModel } from "../../database/allModels";
 
 // Utilities
 import { s3Upload } from "../../Utils/AWS/s3";
+import { Schema } from "mongoose";
 
 const Router = express.Router();
 
@@ -18,6 +19,23 @@ const upload = multer({storage});
 
 
 
+
+/*
+Route     /
+Des       Get Image details
+Params    _id
+Access    Public
+Method    GET  
+*/
+Router.get("/:_id", async (req, res) => {
+    try {
+      const image = await ImageModel.findById(req.params._id);
+  
+      return res.json({ image });
+    } catch (error) {
+      return res.status(500).json({ error: error.message });
+    }
+  });
 
 
 
@@ -39,6 +57,10 @@ Router.post("/", upload.single("file"), async(req,res)=>{
             // ACL : "public-read",
         };
         const uploadImage = await s3Upload(bucketOptions);
+        const Location = uploadImage.Location;
+        const ImageData = await ImageModel.create(Location);
+        console.log(ImageData);
+        console.log(uploadImage.Location);
         return res.status(200).json({uploadImage});
 
     } catch (error) {

@@ -1,8 +1,27 @@
-import React from "react";
 import {FiStar} from 'react-icons/fi';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+import { getImage } from '../Redux/Reducer/Images/Image.action';
+
+
 const RestaurantCard = (props) =>{
+
+    const [image, setImage] = useState({
+        images: [],
+      });
+      const dispatch = useDispatch();
+    
+      useEffect(() => {
+        props.photos &&
+          dispatch(getImage(props.photos)).then((data) =>
+            setImage(data.payload.image)
+          );
+      }, [props.photos]);
+      
     return(
-        <>
+        <Link to={`/restaurant/${props._id}`} className="w-full">
             <div className="w-full md:w-1/2 lg:w-1/3 px-4 py-1  md:p-4">
             <div className="bg-white shadow-lg lg:shadow-none hover:shadow-lg mb-4 w-full border border-white rounded-2xl transition duration-700 ease-in-out  hover:border hover:border-gray-200">
                 <div className="w-full h-56 lg:h-64 relative">
@@ -27,7 +46,7 @@ const RestaurantCard = (props) =>{
                         </div>
                         <span className="bg-white bg-opacity-75 px-1 text-sm lg:text-sm rounded mr-3">{props.durationOfdelivery} min</span>
                     </div>
-                    <img src={props.images.length && props.images[0]} alt="restaurant" className="w-full h-full rounded-lg lg:rounded-xl"/>
+                    <img src={image.images.length && image.images[0].location} alt="restaurant" className="w-full h-full rounded-lg lg:rounded-xl"/>
                 </div>
 
                 <div className="flex flex-col gap-2 my-2 p-3">
@@ -44,7 +63,7 @@ const RestaurantCard = (props) =>{
                 </div>
             </div>
             </div>
-        </>
+        </Link>
     );
 }
 
