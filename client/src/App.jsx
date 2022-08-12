@@ -1,4 +1,7 @@
 import React from "react";
+import axios from "axios";
+
+
 
 import Temp from "./Components/temp";
 import HomeHOC from "./HOC/Home.HOC";
@@ -11,6 +14,13 @@ import Menu from "./page/restaurant/Menu";
 import Photos from "./page/restaurant/Photos";
 import CheckoutHOC from "./HOC/Checkout.HOC";
 import Checkout from "./page/Checkout";
+
+
+if (localStorage.zomatoUser) {
+  const { token } = JSON.parse(localStorage.zomatoUser);
+  axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+}
+
 
 function App() {
   return (
