@@ -30,6 +30,29 @@ Router.get("/",passport.authenticate("jwt"), async(req,res)=>{
 
 
 
+
+/*
+Route     /:_id
+Des       Get user data
+Params    _id
+BODY      none
+Access    Public
+Method    GET  
+*/
+Router.get("/:_id", async (req, res) => {
+    try {
+      const user = await UserModel.findById(req.params._id);
+      const { fullname } = user;
+  
+      return res.json({ user: { fullname } });
+    } catch (error) {
+      return res.status(500).json({ error: error.message });
+    }
+  });
+
+  
+  
+
 /*
 route      ==> /update 
 method     ==> PUT
