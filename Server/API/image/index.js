@@ -57,10 +57,6 @@ Router.post("/", upload.single("file"), async(req,res)=>{
             // ACL : "public-read",
         };
         const uploadImage = await s3Upload(bucketOptions);
-        const Location = uploadImage.Location;
-        const ImageData = await ImageModel.create(Location);
-        console.log(ImageData);
-        console.log(uploadImage.Location);
         return res.status(200).json({uploadImage});
 
     } catch (error) {
