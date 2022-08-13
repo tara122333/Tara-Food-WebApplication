@@ -1,5 +1,6 @@
-import React from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
 
 
 
@@ -17,6 +18,11 @@ import Checkout from "./page/Checkout";
 import GoogleAuth from "./page/GoogleAuth";
 
 
+// redux action
+import { getMyself } from "./Redux/Reducer/User/user.action";
+
+
+
 if (localStorage.zomatoUser) {
   const { token } = JSON.parse(localStorage.zomatoUser);
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
@@ -24,6 +30,14 @@ if (localStorage.zomatoUser) {
 
 
 function App() {
+
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (localStorage.zomatoUser) dispatch(getMyself());
+  }, []);
+
+
   return (
   <>
     <HomeHOC path="/" exact element={Temp}/>
