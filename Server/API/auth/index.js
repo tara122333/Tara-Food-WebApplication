@@ -86,7 +86,11 @@ method     ==> GET
 Des        ==> Google signin callback
 params     ==> none
 Access     ==> public
+
+
 */
+
+
 Router.get(
     "/google/callback",
     passport.authenticate("google", { failureRedirect: "/" }),
