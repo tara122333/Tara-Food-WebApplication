@@ -86,6 +86,6 @@ docker–compose --version
 ## Run the application
 
 ```shell
-docker-compose up -d --build
+sudo docker-compose up -d --build
 ```
 
