@@ -8,10 +8,10 @@ export default(passport)=>{
     passport.use(
         new GoogleStrategy({
             // clientID:process.env.GOOGLE_CLIENT_ID,
-            clientID:'507199952697-rrp4iejat3s4bfigkbn59vlhgq2cug32.apps.googleusercontent.com',
+            clientID:process.env.GOOGLE_CLIENT_ID,
             // clientSecret:process.env.GOOGLE_CLIENT_SECRET,
-            clientSecret:'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',
-            callbackURL: "http://localhost:3000/auth/google/callback"
+            clientSecret:process.env.GOOGLE_CLIENT_SECRET,
+            callbackURL: 'http://localhost:4000/auth/google/callback'
         },
         async(accessToken,refreshToken,profile,done)=>{
 
@@ -27,7 +27,7 @@ export default(passport)=>{
             // console.log(profile.photos[0].value);
             try {
                 const user = await UserModel.findOne({email:newUser.email});
-                console.log(user);
+                // console.log(user);
                 if(user){
                     const token = user.generateAuthToken();
                     done(null,{user,token});

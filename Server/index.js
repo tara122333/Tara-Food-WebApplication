@@ -75,7 +75,7 @@ Zomato.get("/",(req,res)=>{
 
 
 //server listening
-Zomato.listen(3000,()=>{
+Zomato.listen(4000,()=>{
     // MongoDb().then((error)=>{
     //     if(error){
     //         console.log("databases connected success but server not started " + error);
