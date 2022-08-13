@@ -7,9 +7,8 @@ COPY . .
 
 
 
-ENV JWT_PRIVATE_KEY="tarachandkumawatisgoodandbadboy"
+ENV JWT_PRIVATE_KEY=tarachandkumawatisgoodandbadboy
 ENV DB_URI=mongodb+srv://tara122333:Tara1181@tara-food-app.ytgsx.mongodb.net/?retryWrites=true&w=majority
-ENV PORT=4000
 ENV GOOGLE_CLIENT_ID=507199952697-ol7de4c2bub4l8kt3t60cbp8uhnsa6lk.apps.googleusercontent.com
 ENV GOOGLE_CLIENT_SECRET=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
 ENV AWS_S3_ACCESS_KEY=AKIA4NV6HRWODWVF6BED
