@@ -1,7 +1,7 @@
 prod_job:
     stage: deploy
     only:
-        - master
+        - main
     
     before_script:
         - mkdir -p ~/.ssh
