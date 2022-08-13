@@ -93,7 +93,7 @@ Router.get(
     (req, res) => {
       // Successful authentication, redirect home.
       return res.redirect(
-        `http://localhost:3000/google/${req.session.passport.user.token}`
+        `http://localhost:3001/google/${req.session.passport.user.token}`
       );
     }
   );

@@ -31,7 +31,7 @@ function App() {
       <HomeHOC exact path="/:type" element={Home}/>
 
 
-      <HomeHOC path="/google/:token" exact component={GoogleAuth} />
+      <HomeHOC path="/google/:token" exact element={GoogleAuth} />
 
       <RestaurantHOC path="/restaurant/:id" exact element={Home}/>
       <RestaurantHOC path="/restaurant/:id/overview" exact element={Overview}/>
