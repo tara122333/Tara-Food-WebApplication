@@ -1,0 +1,42 @@
+version: "3"
+services:
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports:
+      - "8080:80"
+    depends_on:
+      - nodeserver
+      - client
+  nodeserver:
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./server
+    volumes:
+      - /app/node_modules
+      - ./server:/app
+    environment:
+      - JWT_PRIVATE_KEY="tarachandkumawatisgoodandbadboy"
+      - DB_URI ="mongodb+srv://tara122333:Tara1181@tara-food-app.ytgsx.mongodb.net/?retryWrites=true&w=majority"
+      - GOOGLE_CLIENT_ID=507199952697-ol7de4c2bub4l8kt3t60cbp8uhnsa6lk.apps.googleusercontent.com
+      - GOOGLE_CLIENT_SECRET=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
+
+      - AWS_S3_ACCESS_KEY=AKIA4NV6HRWODWVF6BED
+      - AWS_S3_SECRET_KEY=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
+
+      - MAILGUN__API = 358476bc1738f2522216a2c57e5a5e79-2bab6b06-adc2edd4
+      - MAILGUN__domain = sandbox40fe40047a124e8fa6d55307ed7918c4.mailgun.org
+    ports:
+      - "4000:4000"
+  client:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./client
+    volumes:
+      - /app/node_modules
+      - ./client:/app
+    ports:
+      - "3000:3000"
