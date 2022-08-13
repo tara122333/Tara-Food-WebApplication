@@ -3,10 +3,10 @@ services:
   nginx:
     restart: always
     build:
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
       context: ./nginx
     ports:
-      - "8080:80"
+      - "3080:80"
     depends_on:
       - nodeserver
       - client
@@ -31,10 +31,10 @@ services:
       - "4000:4000"
   client:
     build:
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
       context: ./client
     volumes:
       - /app/node_modules
       - ./client:/app
     ports:
-      - "3000:3000"
+      - "3000:3000
