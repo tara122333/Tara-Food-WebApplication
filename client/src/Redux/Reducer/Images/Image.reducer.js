@@ -1,4 +1,4 @@
-import { GET_IMAGE } from "./image.type.js.lsp";
+import { GET_IMAGE } from "./image.type.js";
 
 const INITIAL_STATE = {
   Image: [],

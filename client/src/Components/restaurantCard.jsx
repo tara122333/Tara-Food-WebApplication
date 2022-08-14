@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { getImage } from '../Redux/Reducer/Images/Image.action.js.lsp';
+import { getImage } from '../Redux/Reducer/Images/Image.action.js';
 
 
 const RestaurantCard = (props) =>{
