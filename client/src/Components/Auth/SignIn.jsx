@@ -8,6 +8,8 @@ import { useDispatch } from "react-redux";
 
 import { signIn } from "../../Redux/Reducer/Auth/Auth.action";
 
+import { API_URL } from '../../key';
+
 
 
 export default function SignIn({isOpen,setIsOpen}) {
@@ -40,7 +42,7 @@ export default function SignIn({isOpen,setIsOpen}) {
   }
 
   const googlesignin = () =>
-    (window.location.href = "http://localhost:4000/auth/google");
+    (window.location.href = `${API_URL}/auth/google`);
 
   return (
     <>

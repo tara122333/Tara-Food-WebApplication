@@ -7,6 +7,8 @@ import { useDispatch } from "react-redux";
 
 import { signUp } from "../../Redux/Reducer/Auth/Auth.action";
 
+import { API_URL } from '../../key';
+
 export default function SignUp({isOpen,setIsOpen}) {
 
   const [userData, setUserData] = useState({
@@ -38,7 +40,7 @@ export default function SignUp({isOpen,setIsOpen}) {
   }
 
   const googlesignin = () =>
-    (window.location.href = "http://localhost:4000/auth/google");
+    (window.location.href = `${API_URL}/auth/google`);
 
 
   return (

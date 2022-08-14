@@ -3,11 +3,13 @@ import axios from 'axios';
 // Redux types
 import { GET_RESTAURANT} from "./restaurant.type";
 
+import { API_URL } from '../../../key';
+
 export const getRestaurant = () => async (dispatch) => {
   try {
     const restaurantList = await axios({
       method: "GET",
-      url: "http://localhost:4000/restaurant/?city=Bangalore",
+      url: `${API_URL}/restaurant/?city=Bangalore`,
     });
 
     return dispatch({ type: GET_RESTAURANT, payload: restaurantList.data });
