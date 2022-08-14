@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Redux types
-import { GET_IMAGE } from "./image.type";
+import { GET_IMAGE } from "./image.type.js.lsp";
 
 export const getImage = (_id) => async (dispatch) => {
   try {
