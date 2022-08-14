@@ -3,8 +3,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { getImage } from '../Redux/Reducer/Images/Image.action.js';
-
 
 const RestaurantCard = (props) =>{
 
@@ -14,10 +12,7 @@ const RestaurantCard = (props) =>{
       const dispatch = useDispatch();
     
       useEffect(() => {
-        props.photos &&
-          dispatch(getImage(props.photos)).then((data) =>
-            setImage(data.payload.image)
-          );
+        console.log("hello i am right ");
       }, [props.photos]);
       
     return(
