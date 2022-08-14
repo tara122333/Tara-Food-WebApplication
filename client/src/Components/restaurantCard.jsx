@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 
+import { getImage } from '../Redux/Reducer/Images/Image.action.js';
+
+
 const RestaurantCard = (props) =>{
 
     const [image, setImage] = useState({
@@ -12,7 +15,10 @@ const RestaurantCard = (props) =>{
       const dispatch = useDispatch();
     
       useEffect(() => {
-        console.log("hello i am right ");
+        props.photos &&
+          dispatch(getImage(props.photos)).then((data) =>
+            setImage(data.payload.image)
+          );
       }, [props.photos]);
       
     return(
