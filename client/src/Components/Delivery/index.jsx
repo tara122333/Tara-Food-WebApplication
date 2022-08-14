@@ -39,7 +39,7 @@ const Delivery = () =>{
             </div>
             <div className="lg:container lg:mx-auto lg:w-full lg:px-24">
                 <h1 className="text-xl px-3 mt-4 mb-2 md:mt-8 md:text-3xl md:font-semibold">Best Food in Bengaluru</h1>
-                <div className="flex flex-wrap ">
+                <div className="flex flex-wrap">
                     
                     {
                         restaurantList.map((items)=>(

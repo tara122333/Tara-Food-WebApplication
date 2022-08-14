@@ -22,8 +22,9 @@ const RestaurantCard = (props) =>{
       }, [props.photos]);
       
     return(
-        <Link to={`/restaurant/${props._id}`} className="w-full">
-            <div className="w-full md:w-1/2 lg:w-1/3 px-4 py-1  md:p-4">
+        <>
+        <Link to={`/restaurant/${props._id}`} className="w-full md:w-1/2 lg:w-1/3">
+            <div className="w-full px-4 py-1  md:p-4">
             <div className="bg-white shadow-lg lg:shadow-none hover:shadow-lg mb-4 w-full border border-white rounded-2xl transition duration-700 ease-in-out  hover:border hover:border-gray-200">
                 <div className="w-full h-56 lg:h-64 relative">
                     <div className="flex justify-between items-end absolute w-full bottom-3">
@@ -65,6 +66,7 @@ const RestaurantCard = (props) =>{
             </div>
             </div>
         </Link>
+        </>
     );
 }
 

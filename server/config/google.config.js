@@ -2,8 +2,6 @@
 import googleOAuth from 'passport-google-oauth20';
 import { UserModel } from '../database/allModels';
 
-import { API_URL } from '../key';
-
 const GoogleStrategy = googleOAuth.Strategy;
 
 export default(passport)=>{
@@ -13,7 +11,7 @@ export default(passport)=>{
             clientID:process.env.GOOGLE_CLIENT_ID,
             // clientSecret:process.env.GOOGLE_CLIENT_SECRET,
             clientSecret:process.env.GOOGLE_CLIENT_SECRET,
-            callbackURL: `${API_URL}/auth/google/callback`
+            callbackURL: `/node/auth/google/callback`
         },
         async(accessToken,refreshToken,profile,done)=>{
 
