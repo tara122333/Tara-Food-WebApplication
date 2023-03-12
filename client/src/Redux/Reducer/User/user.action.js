@@ -17,6 +17,7 @@ export const getUser = (_id) => async (dispatch) => {
     return dispatch({ type: "ERROR", payload: error });
   }
 };
+
 export const getMyself = () => async (dispatch) => {
   try {
     const User = await axios({
@@ -29,6 +30,7 @@ export const getMyself = () => async (dispatch) => {
     return dispatch({ type: "ERROR", payload: error });
   }
 };
+
 export const clearUser = () => async (dispatch) => {
   try {
     return dispatch({ type: CLEAR_USER, payload: {} });

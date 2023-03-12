@@ -21,8 +21,7 @@ export default function SignIn({isOpen,setIsOpen}) {
 
   const dispatch = useDispatch();
 
-  const handleChange = (e) =>
-    setUserData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  const handleChange = (e) => setUserData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
   function closeModal() {
     setIsOpen(false);
@@ -36,10 +35,6 @@ export default function SignIn({isOpen,setIsOpen}) {
     dispatch(signIn(userData));
   };
 
-
-  function closeModal() {
-    setIsOpen(false)
-  }
 
   const googlesignin = () =>
     (window.location.href = `${API_URL}/auth/google`);

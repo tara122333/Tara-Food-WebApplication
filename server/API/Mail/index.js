@@ -18,7 +18,7 @@ Router.post("/", async (req, res) => {
   try {
     // the mailData object should contain exact properties as below.
     const { from, to, subject, text } = req.body.mailData;
-
+    
     // Initializing mailgun library
     const sendMail = initializeMailgun();
 

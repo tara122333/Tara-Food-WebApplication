@@ -43,7 +43,7 @@ UserSchema.methods.generateAuthToken = function(){
     const token = jwt.sign({
         user : this._id.toString(),
     },
-    "yhisdjbsdkjvbksdjbvksjbvkdsjb"
+    "thisdjbsdkjvbksdjbvksjbvkdsjb"
     )
     return token;
 };
@@ -102,6 +102,8 @@ UserSchema.pre("save",function(next){
     });
     
 });
+
+
 
 
 // export our usermodel

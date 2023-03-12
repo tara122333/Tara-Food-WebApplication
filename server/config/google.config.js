@@ -11,7 +11,7 @@ export default(passport)=>{
             clientID:process.env.GOOGLE_CLIENT_ID,
             // clientSecret:process.env.GOOGLE_CLIENT_SECRET,
             clientSecret:process.env.GOOGLE_CLIENT_SECRET,
-            callbackURL: `/node/auth/google/callback`
+            callbackURL: `/auth/google/callback`
         },
         async(accessToken,refreshToken,profile,done)=>{
 

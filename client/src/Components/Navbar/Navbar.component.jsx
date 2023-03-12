@@ -20,6 +20,7 @@ const NavbarLg = ({SignIn,SignUp}) =>{
     const dispatch = useDispatch();
 
     const reduxState = useSelector((global) => global.user.user);
+    // console.log(reduxState);
 
     const signOutHandler = () => dispatch(signOut());
 
